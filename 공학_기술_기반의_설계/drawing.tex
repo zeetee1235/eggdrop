@@ -1,0 +1,209 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{CJKutf8}
+\usepackage{amsmath}
+\usepackage{geometry}
+\usepackage{booktabs}
+\geometry{margin=2.5cm}
+
+\title{\Large\textbf{에그드롭 구조물 설계서}}
+\author{공학 기술 기반 설계}
+\date{2025년 10월 22일}
+
+\begin{document}
+\begin{CJK}{UTF8}{mj}
+
+\maketitle
+
+\begin{center}
+\large 정사면체 기반 충격 흡수 구조물
+\end{center}
+
+\vspace{1cm}
+\tableofcontents
+\newpage
+
+\section{설계 개요}
+
+\subsection{설계 목표}
+본 구조물은 높은 곳에서 떨어뜨린 계란을 보호하기 위한 충격 흡수 장치입니다.
+
+\subsection{핵심 아이디어}
+\begin{enumerate}
+    \item 정사면체 중심 구조로 계란 보호
+    \item 외부 연장 봉(3.5배)으로 충격 거리 확보
+    \item 내부 지지대 12개로 구조 강화
+    \item 테이프 면 24개로 에너지 흡수
+\end{enumerate}
+
+\section{기본 치수}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{항목} & \textbf{치수} \\
+\midrule
+정사면체 한 변 & 80 mm \\
+외부 연장 봉 & 280 mm \\
+전체 크기 & 약 350 mm 입방체 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{부품 구성}
+
+\subsection{1. 정사면체 중심부}
+\begin{itemize}
+    \item 80 mm 봉 6개 (직경 4 mm)
+    \item 재질: 대나무
+    \item 역할: 계란 고정 및 충격 분산
+\end{itemize}
+
+\subsection{2. 외부 연장 봉}
+\begin{itemize}
+    \item 280 mm 봉 6개 (직경 4 mm)
+    \item 배치: 각 변 중점에서 양쪽 140 mm씩
+    \item 역할: 주 충격 흡수
+\end{itemize}
+
+\subsection{3. 내부 지지대}
+\begin{itemize}
+    \item 12개 봉 (직경 3 mm)
+    \item 연결: 각 변 중점에서 반대 꼭짓점 2개로
+    \item 역할: 구조 강성 유지
+\end{itemize}
+
+\subsection{4. 테이프 충격 흡수면}
+\begin{itemize}
+    \item 사다리꼴 24개
+    \item 위치: 외부 봉 양 끝 30 mm 구간
+    \item 재질: 종이/천
+\end{itemize}
+
+\section{재료 목록}
+
+\begin{center}
+\begin{tabular}{lccc}
+\toprule
+\textbf{부품명} & \textbf{규격} & \textbf{수량} & \textbf{재질} \\
+\midrule
+정사면체 변 & 80 mm, 직경 4 mm & 6개 & 대나무 \\
+외부 연장 봉 & 280 mm, 직경 4 mm & 6개 & 대나무 \\
+내부 지지대 & 직경 3 mm & 12개 & 대나무 \\
+테이프 면 & 폭 30 mm & 24개 & 종이 \\
+접착제 & - & 적량 & 글루건 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{조립 순서}
+
+\subsection{단계 1: 정사면체 제작}
+\begin{enumerate}
+    \item 80 mm 봉 6개로 정사면체 조립
+    \item 4개 꼭짓점: V0(0,0,0), V1(80,0,0), V2(40,69.3,0), V3(40,23.1,65.3)
+    \item 글루건으로 모든 접합부 고정
+\end{enumerate}
+
+\subsection{단계 2: 외부 연장 봉 부착}
+\begin{enumerate}
+    \item 각 변의 중점 표시
+    \item 280 mm 봉을 중점 기준 양쪽 140 mm씩 배치
+    \item 정사면체 변과 일직선 정렬
+    \item 중점 부근 글루건으로 고정
+\end{enumerate}
+
+\subsection{단계 3: 내부 지지대 설치}
+\begin{enumerate}
+    \item 각 변 중점에서 반대편 꼭짓점 거리 측정
+    \item 12개 봉 자르기
+    \item 중점과 꼭짓점 연결
+    \item 모든 접합부 고정
+\end{enumerate}
+
+\subsection{단계 4: 테이프 면 부착}
+\begin{enumerate}
+    \item 외부 봉 끝 30 mm 구간 표시
+    \item 인접한 봉 끝점을 종이로 연결
+    \item 사다리꼴 24개 부착
+\end{enumerate}
+
+\section{충격 흡수 원리}
+
+\subsection{3단계 시스템}
+
+\textbf{1단계: 외부 봉 변형}
+\begin{itemize}
+    \item 280 mm 봉이 휘어지며 충격 흡수
+    \item 70-80\% 1차 흡수
+\end{itemize}
+
+\textbf{2단계: 테이프 면 파손}
+\begin{itemize}
+    \item 종이가 찢어지며 에너지 소산
+    \item 10-15\% 추가 흡수
+\end{itemize}
+
+\textbf{3단계: 내부 지지대 분산}
+\begin{itemize}
+    \item 12개 지지대가 하중 분산
+    \item 나머지 충격 최종 분산
+\end{itemize}
+
+\subsection{작동 흐름}
+
+충격 발생 → 외부 봉 휘어짐 → 테이프 찢어짐 → 지지대 분산 → 계란 보호
+
+\section{예상 성능}
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{항목} & \textbf{값} \\
+\midrule
+목표 낙하 높이 & 3-5 m \\
+구조물 무게 & 50-100 g \\
+충격 흡수율 & 85-95\% \\
+제작 시간 & 2-3시간 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{수학적 계산}
+
+\subsection{정사면체}
+변의 길이 $a = 80$ mm일 때:
+
+높이: $h = \sqrt{\frac{2}{3}} \cdot a \approx 65.32$ mm
+
+부피: $V = \frac{a^3}{6\sqrt{2}} \approx 75,682$ mm$^3$
+
+\subsection{외부 봉}
+총 길이: $L = 3.5 \times 80 = 280$ mm
+
+한쪽 연장: $\frac{L}{2} = 140$ mm
+
+\section{장점 및 주의사항}
+
+\subsection{장점}
+\begin{enumerate}
+    \item 높은 충격 흡수율 (3단계 시스템)
+    \item 구조적 안정성 (정사면체)
+    \item 가벼운 무게
+    \item 제작 용이
+\end{enumerate}
+
+\subsection{주의사항}
+\begin{enumerate}
+    \item 외부 봉은 일직선 유지 필수
+    \item 테이프 면은 얇게
+    \item 접착 단단히
+    \item 계란은 중심에 고정
+\end{enumerate}
+
+\vspace{1cm}
+\begin{center}
+\large\textbf{--- 설계서 끝 ---}
+\end{center}
+
+\end{CJK}
+\end{document}
