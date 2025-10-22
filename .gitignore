@@ -21,9 +21,17 @@ missfont.log
 .DS_Store
 Thumbs.db
 *~
+desktop.ini
+
+# Windows
+*.tmp
+*.bak
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
+
+#videos
+*.mp4
