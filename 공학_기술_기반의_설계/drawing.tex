@@ -2,7 +2,9 @@
 \usepackage{CJKutf8}
 \usepackage{amsmath}
 \usepackage{geometry}
+\usepackage{array}
 \usepackage{booktabs}
+\usepackage{enumitem}
 \geometry{margin=2.5cm}
 
 \title{\Large\textbf{에그드롭 구조물 설계서}}
@@ -15,194 +17,383 @@
 \maketitle
 
 \begin{center}
-\large 정사면체 기반 충격 흡수 구조물
+\large
+정사면체 기반 충격 흡수 구조물
 \end{center}
 
 \vspace{1cm}
+
 \tableofcontents
 \newpage
 
+% ============================================
 \section{설계 개요}
+% ============================================
 
 \subsection{설계 목표}
-본 구조물은 높은 곳에서 떨어뜨린 계란을 보호하기 위한 충격 흡수 장치입니다.
+
+본 구조물은 높은 곳에서 떨어뜨린 계란을 보호하기 위한 충격 흡수 장치입니다. 
+정사면체의 구조적 안정성과 연장된 봉의 충격 분산 효과를 결합하여 설계했습니다.
 
 \subsection{핵심 아이디어}
-\begin{enumerate}
-    \item 정사면체 중심 구조로 계란 보호
-    \item 외부 연장 봉(3.5배)으로 충격 거리 확보
-    \item 내부 지지대 12개로 구조 강화
-    \item 테이프 면 24개로 에너지 흡수
+
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{정사면체 중심 구조}: 계란을 중앙에 배치하고 4개 꼭짓점으로 모든 방향의 충격 분산
+    \item \textbf{외부 연장 봉}: 각 변을 3.5배로 연장하여 충격 지점과 계란 사이 거리 확보
+    \item \textbf{내부 보강재}: 12개 지지대로 구조 강성 확보 및 변형 방지
+    \item \textbf{테이프 면}: 24개 충격 흡수면이 에너지를 소산
 \end{enumerate}
 
-\section{기본 치수}
+% ============================================
+\section{구조 상세}
+% ============================================
+
+\subsection{기본 치수}
 
 \begin{center}
 \begin{tabular}{ll}
 \toprule
 \textbf{항목} & \textbf{치수} \\
 \midrule
-정사면체 한 변 & 80 mm \\
-외부 연장 봉 & 280 mm \\
-전체 크기 & 약 350 mm 입방체 \\
+정사면체 한 변의 길이 & 80 mm \\
+정사면체 높이 & 약 65.3 mm \\
+외부 연장 봉 총 길이 & 280 mm (= 80 mm $\times$ 3.5) \\
+외부 봉 한쪽 연장 길이 & 140 mm (중점 기준) \\
+구조물 전체 크기 & 약 350 mm $\times$ 350 mm $\times$ 350 mm \\
 \bottomrule
 \end{tabular}
 \end{center}
 
+\subsection{정사면체 좌표}
+
+중심 정사면체는 4개 꼭짓점으로 구성됩니다:
+
+\begin{itemize}
+    \item V0: (0, 0, 0) mm
+    \item V1: (80, 0, 0) mm
+    \item V2: (40, 69.3, 0) mm
+    \item V3: (40, 23.1, 65.3) mm
+\end{itemize}
+
+이 4개 점을 연결하면 6개 변(모서리)이 만들어집니다:
+V0-V1, V1-V2, V2-V0, V0-V3, V1-V3, V2-V3
+
+% ============================================
 \section{부품 구성}
+% ============================================
 
 \subsection{1. 정사면체 중심부}
+
+\textbf{기능}: 계란을 보호하는 핵심 구조
+
 \begin{itemize}
-    \item 80 mm 봉 6개 (직경 4 mm)
-    \item 재질: 대나무
-    \item 역할: 계란 고정 및 충격 분산
+    \item 부품: 80 mm 길이 봉 6개
+    \item 직경: 4 mm
+    \item 재질: 나무젓가락
+    \item 역할: 계란 고정 및 1차 충격 분산
 \end{itemize}
 
 \subsection{2. 외부 연장 봉}
+
+\textbf{기능}: 충격 지점과 계란 사이 거리 확보, 봉 변형으로 에너지 흡수
+
 \begin{itemize}
-    \item 280 mm 봉 6개 (직경 4 mm)
-    \item 배치: 각 변 중점에서 양쪽 140 mm씩
-    \item 역할: 주 충격 흡수
+    \item 부품: 280 mm 길이 봉 6개
+    \item 직경: 4 mm
+    \item 재질: 플라스틱 봉
+    \item 배치: 각 정사면체 변의 중점을 기준으로 양쪽 140 mm씩 연장
+    \item 역할: 주 충격 흡수 (봉이 휘어지며 충격 완화)
+\end{itemize}
+
+\textbf{예시}: V0-V1 변(80mm)의 중점을 M이라 하면:
+\begin{itemize}
+    \item 외부 봉은 M에서 V0 방향으로 140 mm 연장
+    \item M에서 V1 방향으로 140 mm 연장
+    \item 총 280 mm 봉이 V0-V1 변과 일직선상에 배치
 \end{itemize}
 
 \subsection{3. 내부 지지대}
+
+\textbf{기능}: 구조 강성 유지 및 하중 분산
+
 \begin{itemize}
-    \item 12개 봉 (직경 3 mm)
-    \item 연결: 각 변 중점에서 반대 꼭짓점 2개로
-    \item 역할: 구조 강성 유지
+    \item 부품: 12개 봉
+    \item 직경: 3 mm
+    \item 재질: 나무젓가락
+    \item 연결: 각 변의 중점 → 반대편 2개 꼭짓점
+\end{itemize}
+
+\textbf{연결 예시}:
+\begin{itemize}
+    \item V0-V1 변의 중점 M01 → V2
+    \item V0-V1 변의 중점 M01 → V3
+    \item (나머지 5개 변도 동일: 총 6 $\times$ 2 = 12개)
 \end{itemize}
 
 \subsection{4. 테이프 충격 흡수면}
+
+\textbf{기능}: 종이/천이 찢어지며 충격 에너지 소산
+
 \begin{itemize}
-    \item 사다리꼴 24개
+    \item 형태: 사다리꼴 24개
     \item 위치: 외부 봉 양 끝 30 mm 구간
-    \item 재질: 종이/천
+    \item 재질: 얇은 종이 또는 천 (테이프로 고정)
+    \item 구성: 
+    \begin{itemize}
+        \item 정사면체 꼭짓점 쪽: 12개
+        \item 반대편 끝: 12개
+    \end{itemize}
 \end{itemize}
 
+% ============================================
 \section{재료 목록}
+% ============================================
 
 \begin{center}
 \begin{tabular}{lccc}
 \toprule
 \textbf{부품명} & \textbf{규격} & \textbf{수량} & \textbf{재질} \\
 \midrule
-정사면체 변 & 80 mm, 직경 4 mm & 6개 & 대나무 \\
-외부 연장 봉 & 280 mm, 직경 4 mm & 6개 & 대나무 \\
-내부 지지대 & 직경 3 mm & 12개 & 대나무 \\
-테이프 면 & 폭 30 mm & 24개 & 종이 \\
-접착제 & - & 적량 & 글루건 \\
+정사면체 변 & 80 mm, 직경 4 mm & 6개 & 나무젓가락 \\
+외부 연장 봉 & 280 mm, 직경 4 mm & 6개 & 플라스틱 봉 \\
+내부 지지대 & 길이 가변, 직경 3 mm & 12개 & 나무젓가락 \\
+테이프 면 & 폭 30 mm & 24개 & 종이/천 \\
+접착제 & - & 적량 & 글루건/목공풀 \\
+고정 테이프 & - & 적량 & 종이테이프 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
+\vspace{0.5cm}
+
+\textbf{참고사항}:
+\begin{itemize}
+    \item 나무젓가락은 구하기 쉽고 가공이 용이합니다
+    \item 플라스틱 봉은 적당한 탄성으로 충격 흡수에 효과적입니다
+    \item 테이프 면은 얇을수록 찢어지며 에너지를 더 잘 흡수합니다
+    \item 글루건은 빠른 접착에 유리하고, 목공풀은 강도가 높습니다
+\end{itemize}
+
+% ============================================
 \section{조립 순서}
+% ============================================
 
 \subsection{단계 1: 정사면체 제작}
+
 \begin{enumerate}
-    \item 80 mm 봉 6개로 정사면체 조립
-    \item 4개 꼭짓점: V0(0,0,0), V1(80,0,0), V2(40,69.3,0), V3(40,23.1,65.3)
+    \item 80 mm 봉 6개 준비
+    \item 4개 꼭짓점을 만들도록 6개 변 연결
     \item 글루건으로 모든 접합부 고정
+    \item 구조가 흔들리지 않는지 확인
 \end{enumerate}
+
+\textbf{팁}: 바닥(V0, V1, V2)부터 삼각형으로 만든 후 꼭대기(V3) 연결
 
 \subsection{단계 2: 외부 연장 봉 부착}
+
 \begin{enumerate}
-    \item 각 변의 중점 표시
+    \item 각 변(80mm)의 중점 위치 표시
     \item 280 mm 봉을 중점 기준 양쪽 140 mm씩 배치
-    \item 정사면체 변과 일직선 정렬
-    \item 중점 부근 글루건으로 고정
+    \item 정사면체 변과 일직선이 되도록 정렬
+    \item 중점 부근을 글루건으로 단단히 고정
+    \item 총 6개 외부 봉 부착
 \end{enumerate}
+
+\textbf{주의}: 봉이 변과 정확히 일직선을 이루어야 충격 분산이 효과적입니다
 
 \subsection{단계 3: 내부 지지대 설치}
+
 \begin{enumerate}
-    \item 각 변 중점에서 반대편 꼭짓점 거리 측정
-    \item 12개 봉 자르기
-    \item 중점과 꼭짓점 연결
-    \item 모든 접합부 고정
+    \item 각 변의 중점 위치 재확인
+    \item 중점에서 반대편 2개 꼭짓점까지 거리 측정
+    \item 해당 길이로 봉 자르기 (총 12개)
+    \item 각 중점에서 반대편 꼭짓점으로 지지대 연결
+    \item 모든 접합부 글루건으로 고정
 \end{enumerate}
+
+\textbf{예시}:
+\begin{itemize}
+    \item V0-V1 변 중점 → V2 연결
+    \item V0-V1 변 중점 → V3 연결
+    \item (5개 변 × 2 = 10개 더 연결)
+\end{itemize}
 
 \subsection{단계 4: 테이프 면 부착}
+
 \begin{enumerate}
-    \item 외부 봉 끝 30 mm 구간 표시
-    \item 인접한 봉 끝점을 종이로 연결
-    \item 사다리꼴 24개 부착
+    \item 외부 봉 끝에서 30 mm 구간 표시
+    \item 인접한 2개 봉의 끝점을 종이/천으로 연결
+    \item 사다리꼴 형태로 자르기
+    \item 테이프로 봉에 고정
+    \item 한쪽 끝 12개, 반대편 끝 12개 총 24개 부착
 \end{enumerate}
 
-\section{충격 흡수 원리}
+\textbf{팁}: 종이는 얇을수록 좋고, 너무 단단하지 않아야 찢어지며 충격 흡수
 
-\subsection{3단계 시스템}
+\subsection{단계 5: 마무리}
+
+\begin{enumerate}
+    \item 모든 접합부 재점검
+    \item 흔들림 없이 단단한지 확인
+    \item 계란 고정 위치 확인 (정사면체 중심)
+    \item 가벼운 충격 테스트 (낮은 높이)
+\end{enumerate}
+
+% ============================================
+\section{충격 흡수 원리}
+% ============================================
+
+\subsection{3단계 충격 흡수 시스템}
 
 \textbf{1단계: 외부 봉 변형}
 \begin{itemize}
-    \item 280 mm 봉이 휘어지며 충격 흡수
-    \item 70-80\% 1차 흡수
+    \item 280 mm 긴 봉이 충격을 받으면 휘어짐
+    \item 휘어지는 과정에서 운동에너지 → 변형에너지로 전환
+    \item 충격력의 70-80\% 1차 흡수
 \end{itemize}
 
 \textbf{2단계: 테이프 면 파손}
 \begin{itemize}
-    \item 종이가 찢어지며 에너지 소산
-    \item 10-15\% 추가 흡수
+    \item 종이/천 재질이 찢어지며 에너지 소산
+    \item 찢어지는 과정 = 에너지 방출
+    \item 충격력의 10-15\% 추가 흡수
 \end{itemize}
 
 \textbf{3단계: 내부 지지대 분산}
 \begin{itemize}
-    \item 12개 지지대가 하중 분산
-    \item 나머지 충격 최종 분산
+    \item 12개 지지대가 하중을 여러 방향으로 분산
+    \item 정사면체 형태 유지로 계란 직접 충격 방지
+    \item 나머지 충격력 최종 분산
 \end{itemize}
 
-\subsection{작동 흐름}
+\subsection{작동 흐름도}
 
-충격 발생 → 외부 봉 휘어짐 → 테이프 찢어짐 → 지지대 분산 → 계란 보호
+\begin{center}
+\fbox{
+\begin{minipage}{0.9\textwidth}
+\centering
+충격 발생 
+\\ $\downarrow$ \\
+외부 봉이 휘어지며 1차 충격 흡수 (70-80\%)
+\\ $\downarrow$ \\
+테이프 면이 찢어지며 2차 에너지 소산 (10-15\%)
+\\ $\downarrow$ \\
+내부 지지대가 하중을 분산 (나머지)
+\\ $\downarrow$ \\
+정사면체 중심부가 계란 보호
+\\ $\downarrow$ \\
+\textbf{계란 안전!}
+\end{minipage}
+}
+\end{center}
 
+% ============================================
 \section{예상 성능}
+% ============================================
 
 \begin{center}
 \begin{tabular}{ll}
 \toprule
-\textbf{항목} & \textbf{값} \\
+\textbf{항목} & \textbf{예상 값} \\
 \midrule
 목표 낙하 높이 & 3-5 m \\
 구조물 무게 & 50-100 g \\
-충격 흡수율 & 85-95\% \\
-제작 시간 & 2-3시간 \\
+전체 크기 & 약 350 mm $\times$ 350 mm $\times$ 350 mm \\
+충격 흡수율 & 85-95\% (3단계 합산) \\
+제작 시간 & 약 2-3시간 \\
+예상 비용 & 5,000-10,000원 \\
 \bottomrule
 \end{tabular}
 \end{center}
 
-\section{수학적 계산}
-
-\subsection{정사면체}
-변의 길이 $a = 80$ mm일 때:
-
-높이: $h = \sqrt{\frac{2}{3}} \cdot a \approx 65.32$ mm
-
-부피: $V = \frac{a^3}{6\sqrt{2}} \approx 75,682$ mm$^3$
-
-\subsection{외부 봉}
-총 길이: $L = 3.5 \times 80 = 280$ mm
-
-한쪽 연장: $\frac{L}{2} = 140$ mm
-
-\section{장점 및 주의사항}
-
 \subsection{장점}
+
 \begin{enumerate}
-    \item 높은 충격 흡수율 (3단계 시스템)
-    \item 구조적 안정성 (정사면체)
-    \item 가벼운 무게
-    \item 제작 용이
+    \item \textbf{높은 충격 흡수율}: 3단계 시스템으로 효과적 보호
+    \item \textbf{구조적 안정성}: 정사면체는 모든 방향 충격에 강함
+    \item \textbf{가벼운 무게}: 나무젓가락과 플라스틱 봉 사용으로 경량화
+    \item \textbf{제작 용이}: 복잡한 도구 없이 조립 가능
+    \item \textbf{재료 구하기 쉬움}: 나무젓가락, 플라스틱 봉, 종이 등 구하기 쉬운 재료
 \end{enumerate}
 
 \subsection{주의사항}
+
 \begin{enumerate}
-    \item 외부 봉은 일직선 유지 필수
-    \item 테이프 면은 얇게
-    \item 접착 단단히
-    \item 계란은 중심에 고정
+    \item 외부 봉이 일직선을 이루지 않으면 충격 분산 효과 감소
+    \item 테이프 면은 너무 두꺼우면 찢어지지 않아 효과 없음
+    \item 접착이 약하면 충격시 구조물 분리 위험
+    \item 계란은 반드시 정사면체 중심에 고정
+\end{enumerate}
+
+% ============================================
+\section{수학적 계산}
+% ============================================
+
+\subsection{정사면체 기하학}
+
+정사면체 한 변의 길이를 $a = 80$ mm라 할 때:
+
+\textbf{높이}:
+\[
+h = \sqrt{\frac{2}{3}} \cdot a = \sqrt{\frac{2}{3}} \times 80 \approx 65.32 \text{ mm}
+\]
+
+
+\subsection{외부 봉 계산}
+
+\textbf{총 길이}:
+\[
+L = 3.5 \times a = 3.5 \times 80 = 280 \text{ mm}
+\]
+
+\textbf{중점 기준 한쪽 연장}:
+\[
+\text{연장 길이} = \frac{L}{2} = \frac{280}{2} = 140 \text{ mm}
+\]
+
+\textbf{정사면체 변 대비 연장 부분}:
+\[
+\text{연장 = } \frac{(3.5 - 1) \times a}{2} = \frac{2.5 \times 80}{2} = 100 \text{ mm (한쪽)}
+\]
+
+% ============================================
+\section{참고 자료}
+% ============================================
+
+\subsection{관련 물리 원리}
+
+\begin{itemize}
+    \item \textbf{충격량-운동량 정리}: $F \cdot \Delta t = \Delta p$
+    \begin{itemize}
+        \item 충격 시간을 늘리면 힘이 감소
+        \item 봉이 휘어지는 시간 = 충격 시간 증가
+    \end{itemize}
+    
+    \item \textbf{에너지 보존}: 운동에너지 → 변형에너지 + 열에너지
+    \begin{itemize}
+        \item 봉 변형, 종이 찢어짐으로 에너지 전환
+    \end{itemize}
+    
+    \item \textbf{정사면체 구조}: 모든 방향에서 대칭적 지지
+    \begin{itemize}
+        \item 어느 방향 충격도 4개 꼭짓점이 분산
+    \end{itemize}
+\end{itemize}
+
+\subsection{개선 아이디어}
+
+\begin{enumerate}
+    \item 외부 봉에 스펀지 감싸기 → 추가 충격 흡수
+    \item 테이프 면을 2-3겹으로 → 다단계 파손으로 에너지 소산 증가
+    \item 계란 주변에 솜 채우기 → 최종 보호층
+    \item 낙하산 부착 → 낙하 속도 자체를 줄임
 \end{enumerate}
 
 \vspace{1cm}
+
 \begin{center}
-\large\textbf{--- 설계서 끝 ---}
+\large
+\textbf{--- 설계서 끝 ---}
 \end{center}
 
 \end{CJK}
